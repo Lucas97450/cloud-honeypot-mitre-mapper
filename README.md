@@ -10,11 +10,7 @@ Ce projet met en place un **honeypot SSH (Cowrie)** déployé dans une VM EC2 AW
 -  **Mapper** ces événements aux techniques **MITRE ATT&CK** (framework utilisé par les entreprises FAANG et SOCs)  
 -  **Visualiser** les attaques sous forme de heatmap MITRE pour comprendre les tactiques utilisées.  
 
-
-
-
-
-*(Ici tu insères une capture de ton terminal qui montre `tail -f cowrie.log` avec des bots qui se connectent 🔥)*
+<img width="715" height="893" alt="Capture d’écran, le 2025-09-02 à 17 44 57" src="https://github.com/user-attachments/assets/b066077b-6c69-4173-b617-c3b8c49ecefc" />
 
 ---
 
@@ -59,7 +55,7 @@ Chaque événement capté par **Cowrie** est analysé et, lorsqu’il correspond
 - **T1110 – Brute Force** → Tentatives de login massives avec `root` / `admin`  
 - **T1059 – Command-Line Interface** → Exécution de commandes malicieuses (`wget`, `curl`, `echo`)  
 - **T1105 – Ingress Tool Transfer** → Téléchargement de malwares via `wget http://...`  
-- **T1071 – Application Layer Protocol → Détection de versions SSH utilisées par les bots (fingerprint SSH-2.0-Go, SSH-2.0-libssh, etc.).
+- **T1105 – Application Layer Protocol → Détection de versions SSH utilisées par les bots (fingerprint SSH-2.0-Go, SSH-2.0-libssh, etc.).
 - **Reconnaissance – SSH connection attempt → Connexions automatiques depuis des IPs multiples (scanners/IoT bots).
 
 <img width="688" height="835" alt="Capture d’écran, le 2025-09-02 à 17 36 14" src="https://github.com/user-attachments/assets/59f4dddb-bdfb-4363-a163-ba853297d71e" />
