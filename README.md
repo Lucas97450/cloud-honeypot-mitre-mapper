@@ -60,7 +60,9 @@ Chaque événement capté par **Cowrie** est analysé et, lorsqu’il correspond
 - **T1059 – Command-Line Interface** → Exécution de commandes malicieuses (`wget`, `curl`, `echo`)  
 - **T1105 – Ingress Tool Transfer** → Téléchargement de malwares via `wget http://...`  
 - **T1078 – Valid Accounts** → Connexions réussies avec des credentials faibles  
-- **T1049 – System Network Connections Discovery** → Bots testant la configuration réseau  
+- **T1049 – System Network Connections Discovery** → Bots testant la configuration réseau
+
+<img width="688" height="835" alt="Capture d’écran, le 2025-09-02 à 17 36 14" src="https://github.com/user-attachments/assets/59f4dddb-bdfb-4363-a163-ba853297d71e" />
 
 ### Limites de la couverture
 Cowrie est un honeypot **spécialisé SSH/Telnet** → il n’émule pas tous les comportements possibles d’un attaquant.  
