@@ -18,16 +18,15 @@ Ce projet met en place un **honeypot SSH (Cowrie)** déployé dans une VM EC2 AW
 
 ---
 
-## Installation & Setup (reproductible)
-
-```md
 ## Installation & Setup
 
-### 1. Lancer une VM Cloud
+```md
+
+# Lancer une VM Cloud
 - AWS EC2 (Ubuntu 22.04, t2.micro)
 - Security Group : TCP 22 (SSH) + 2222 (honeypot) ouverts au monde
 
-### 2. Installer Cowrie
+# Installer Cowrie
 ```bash
 sudo apt update && sudo apt install -y git python3-venv
 git clone https://github.com/cowrie/cowrie
@@ -49,3 +48,25 @@ tail -f var/log/cowrie/cowrie.log
 ```md
 python heatmap_mitre.py
 ```
+Un fichier mitre_matrix.png est généré automatiquement.
+
+##�️ MITRE ATT&CK – Mapping des attaques observées
+
+Le projet s’appuie sur le framework **MITRE ATT&CK**, référence mondiale pour décrire les tactiques et techniques utilisées par les attaquants.  
+Chaque événement capté par **Cowrie** est analysé et, lorsqu’il correspond, **mappé automatiquement** à une technique MITRE (Txxxx).
+
+### Techniques observées dans mes logs
+- **T1110 – Brute Force** → Tentatives de login massives avec `root` / `admin`  
+- **T1059 – Command-Line Interface** → Exécution de commandes malicieuses (`wget`, `curl`, `echo`)  
+- **T1105 – Ingress Tool Transfer** → Téléchargement de malwares via `wget http://...`  
+- **T1078 – Valid Accounts** → Connexions réussies avec des credentials faibles  
+- **T1049 – System Network Connections Discovery** → Bots testant la configuration réseau  
+
+### Limites de la couverture
+Cowrie est un honeypot **spécialisé SSH/Telnet** → il n’émule pas tous les comportements possibles d’un attaquant.  
+Certaines **tactiques MITRE (Exfiltration, Lateral Movement, Impact, etc.)** ne seront pas visibles ici.  
+
+L’objectif n’est donc pas de **couvrir 100% de la matrice MITRE**, mais de :  
+1. **Capturer des comportements réels** (bots, brute force, commandes malveillantes)  
+2. **Montrer une démarche de Threat Intelligence** : logs → mapping → analyse  
+3. **Démontrer ma capacité à travailler avec MITRE ATT&CK** comme le font les SOCs et équipes de détection en entreprise.
