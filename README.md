@@ -50,7 +50,7 @@ python heatmap_mitre.py
 ```
 Un fichier mitre_matrix.png est généré automatiquement.
 
-##�️ MITRE ATT&CK – Mapping des attaques observées
+## MITRE ATT&CK – Mapping des attaques observées
 
 Le projet s’appuie sur le framework **MITRE ATT&CK**, référence mondiale pour décrire les tactiques et techniques utilisées par les attaquants.  
 Chaque événement capté par **Cowrie** est analysé et, lorsqu’il correspond, **mappé automatiquement** à une technique MITRE (Txxxx).
