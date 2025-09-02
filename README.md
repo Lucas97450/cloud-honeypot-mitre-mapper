@@ -68,3 +68,8 @@ L’objectif n’est donc pas de **couvrir 100% de la matrice MITRE**, mais de :
 1. **Capturer des comportements réels** (bots, brute force, commandes malveillantes)  
 2. **Montrer une démarche de Threat Intelligence** : logs → mapping → analyse  
 3. **Démontrer ma capacité à travailler avec MITRE ATT&CK** comme le font les SOCs et équipes de détection en entreprise.
+
+## Heatmap MITRE ATT&CK
+
+Pour enrichir l’analyse, j’ai généré une **heatmap MITRE** qui montre visuellement quelles techniques d’attaque ont été observées dans mes logs Cowrie.  
+Chaque case correspond à une technique MITRE (Txxxx). Plus la couleur est foncée, plus la technique a été observée dans les logs.  
